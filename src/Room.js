@@ -19,7 +19,7 @@ class Room extends Component {
             window.callFrame.join({ url: "https://roulette.daily.co/" + roomName });
         }
 
-        createFrameAndJoinRoom(this.props.name);
+        createFrameAndJoinRoom(window.location.pathname.replace("/", ""));
     }
 
     render() {
