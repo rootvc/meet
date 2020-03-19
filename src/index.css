@@ -63,10 +63,10 @@ ul.header li a {
   background-color: #2c2c2c;
   z-index: 1;
   left: 0;
-  background-image: url("logotype-white.png");
+  /* background-image: url("logotype-white.png");
   background-repeat: no-repeat;
   background-position-x: right;
-  background-position-y: center;
+  background-position-y: center; */
 }
 .title {
   position: absolute;
@@ -94,20 +94,24 @@ ul.header li a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 1em;
   width: 100%;
 }
 .daily {
   position: absolute;
   margin-right: 1em;
-  right: 1.25em;
+  right: 2.25em;
   top: 50%;
   transform: translateY(-50%);
 }
-img.github {
+img.github, img.logotype {
   position: absolute;
   height: 24px;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  right: 1em;
+}
+
+img.logotype {
+  height: auto;
 }

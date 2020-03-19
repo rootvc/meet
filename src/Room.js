@@ -38,6 +38,7 @@ class Room extends Component {
             <div>
                 <div class="header">
                     <h2 class="title">MEETING WITH {this.props.name.toUpperCase()} // GUEST</h2>
+                    <a href="https://root.vc" target="_new"><img class="logotype" src="logotype.png"></img></a>
                 </div>
             </div>
             <div class="footer">
