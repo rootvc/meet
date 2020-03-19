@@ -57,7 +57,7 @@ class Room extends Component {
 function currentDatetime() {
     let date = new Date();
     let zoneName = moment.tz.guess();
-    let time = moment(date).format("h:MMa z");
+    let time = moment(date).format("h:mma z");
     let day = moment(date).format(" | MMMM DD, YYYY");
     let zone = moment().tz(zoneName).format("z");
     return  [time, zone, day].join(" ");
