@@ -31,7 +31,7 @@ function Child() {
   
     return (
       <div>
-        <Room />
+        <Room name={name}/>
       </div>
     );
   }
