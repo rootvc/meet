@@ -35,7 +35,23 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Configuration
 
+### Brand Styles
 
+Edit `src/brand.css` to add your custom color scheme.
+
+### Brand Marks
+
+ - `public/favicon.ico`
+ - `public/logo192.png`
+ - `public/logo512.png`
+ - `public/logo-header.png`
+ - `src/logo.png`
+
+### Environment Variables
+
+Learn about environment variables on Netlify: [https://docs.netlify.com/configure-builds/environment-variables/#declare-variables]
+
+`DAILY_API_KEY` = API key for [daily.co] API
 
 ## Deployment
 
