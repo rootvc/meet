@@ -1,5 +1,7 @@
 [Root Ventures](root.vc) has a custom video conferencing app built on the [Daily](daily.co) API. You can use this on your own if you like. Fork the repo and modify to your heart's content.
 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/netlify-statuskit)
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -40,6 +42,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 Deployment requires a [Netlify](netlify.com) account.
 
 `netlify deploy`
+
+Our app deploys with continuous [deployment hooks](https://docs.netlify.com/site-deploys/create-deploys/#drag-and-drop).
 
 ## References
 
