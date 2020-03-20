@@ -1,8 +1,12 @@
-[Root Ventures](root.vc) has a customer video conferencing app built on the [Daily](daily.co) API. You can use this on your own if you like. Fork the repo and modify to your heart's content.
+[Root Ventures](root.vc) has a custom video conferencing app built on the [Daily](daily.co) API. You can use this on your own if you like. Fork the repo and modify to your heart's content.
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+To install dependencies.
 
 ### `npm start`
 
