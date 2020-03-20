@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {
   Route,
-  NavLink,
   BrowserRouter as Router,
   useParams
 } from "react-router-dom";
@@ -13,10 +12,9 @@ class Main extends Component {
         return (
             <Router>
                 <div>
-                    <h1>Meet Root</h1>
                     <div className="content">
                         <Route exact path="/" component={Home}/>
-                        <Route path="/:name" children={<Child />} component={Room}/>
+                        <Route path="/:name" children={<Child />} />
                     </div>
                 </div>
             </Router>
@@ -30,7 +28,7 @@ function Child() {
     let { name } = useParams();
   
     return (
-      <div>
+      <div className="main">
         <Room name={name}/>
       </div>
     );

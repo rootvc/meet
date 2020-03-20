@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import moment from 'moment-timezone';
-
  
 class Room extends Component {
     componentDidMount() {
         function createFrameAndJoinRoom(room) {
             let roomName = "meet-" + room;
-            window.callFrame = window.DailyIframe.createFrame({
+            window.callFrame = window.DailyIframe.createFrame(
+                document.getElementById("frame"), {
                 showLeaveButton: true,
                 iframeStyle: {
                     position: 'fixed',
-                    bottom: "5%",
-                    top: "5%",
+                    bottom: 0,
+                    top: 0,
                     left: 0,
                     width: '100%',
-                    height: '90%',
+                    height: '95%',
                 }
             });
             
@@ -34,22 +34,19 @@ class Room extends Component {
     render() {
     
     return (
-        <div class="room">
-            <div>
-                <div class="header">
-                    <h2 class="title">MEETING WITH {this.props.name.toUpperCase()} // GUEST</h2>
-                    <a href="https://root.vc" target="_new"><img class="logotype" src="logotype.png"></img></a>
+        <div className="room">
+            <div id="frame"></div>
+            <div className="header">
+                <h2 className="title">MEETING WITH {this.props.name.toUpperCase()} &#x2F;&#x2F; GUEST</h2>
+                <a href="https://root.vc" target="_new"><img alt="Root Ventures" className="logotype" src="logotype.png"></img></a>
+            </div>
+            <div className="footer">
+                <div className="date" id="date"></div>
+                <div className="plug">
+                    <span className="daily">Made with <a href="https://daily.co">daily.co</a></span>
+                    <a href="https://github.com/rootvc/meet" target="_new"><img alt="GitHub" className="github" src="github.png"></img></a>
                 </div>
             </div>
-            <div class="footer">
-                <div class="date" id="date">
-                </div>
-                <div class="plug">
-                    <span class="daily">Made with <a href="https://daily.co">daily.co</a></span>
-                    <a href="https://github.com/rootvc/meet" target="_new"><img class="github" src="github.png"></img></a>
-                </div>
-            </div>
-            <div class="loader"></div>
         </div>
     );
    };
