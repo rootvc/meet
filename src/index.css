@@ -87,7 +87,7 @@ ul.header li a {
 }
 img.github {
   position: absolute;
-  height: 1.5em;
+  height: 1.25em;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
@@ -95,7 +95,7 @@ img.github {
 }
 img.logotype {
   position: absolute;
-  height: 4em;
+  height: 3.5em;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
@@ -115,7 +115,13 @@ img.logotype {
   left: 0;
 }
 @media only screen and (max-width: 600px) {
-  .title {
+  .title, footer {
     font-size: 90%;
   }
+}
+html, body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+body {
 }
