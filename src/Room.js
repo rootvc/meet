@@ -9,12 +9,12 @@ class Room extends Component {
                 document.getElementById("frame"), {
                 showLeaveButton: true,
                 iframeStyle: {
-                    position: 'fixed',
-                    bottom: 0,
-                    top: 0,
+                    position: 'relative',
+                    top: "4%",
+                    bottom: "4%",
                     left: 0,
-                    width: '100%',
-                    height: '95%',
+                    width: '99.6%',
+                    height: '92%',
                 }
             });
             
