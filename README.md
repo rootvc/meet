@@ -1,6 +1,18 @@
 [Root Ventures](root.vc) has a custom video conferencing app built on the [Daily](daily.co) API. You can use this on your own if you like. Fork the repo and modify to your heart's content.
 
+## Deployment
+
+Deployment requires a [Netlify](netlify.com) account.
+
+### Fork and Deploy with Netlify Button
+
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/rootvc/meet)
+
+### From Command Line
+
+`netlify deploy`
+
+Our app deploys with continuous [deployment hooks](https://docs.netlify.com/site-deploys/create-deploys/#drag-and-drop).
 
 ## Available Scripts
 
@@ -52,14 +64,6 @@ Edit `src/brand.css` to add your custom color scheme.
 Learn about environment variables on Netlify: https://docs.netlify.com/configure-builds/environment-variables/#declare-variables
 
 `DAILY_API_KEY` = API key for [daily.co](daily.co) API
-
-## Deployment
-
-Deployment requires a [Netlify](netlify.com) account.
-
-`netlify deploy`
-
-Our app deploys with continuous [deployment hooks](https://docs.netlify.com/site-deploys/create-deploys/#drag-and-drop).
 
 ## References
 
