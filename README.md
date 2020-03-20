@@ -51,7 +51,10 @@ Edit `src/brand.css` to add your custom color scheme.
 
 Learn about environment variables on Netlify: https://docs.netlify.com/configure-builds/environment-variables/#declare-variables
 
-`DAILY_API_KEY` = API key for [daily.co](daily.co) API
+In local development, define your environment variables in `.env.local` and make sure not to check these into your repo.
+
+`REACT_APP_DAILY_API_KEY` = API key for [daily.co](daily.co) API
+`REACT_APP_DAILY_SUBDOMAIN` = subdomain for your account on [daily.co](daily.co)
 
 ## Deployment
 

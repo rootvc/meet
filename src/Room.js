@@ -19,7 +19,8 @@ class Room extends Component {
             });
             
             console.log("Joining " + roomName);
-            window.callFrame.join({ url: "https://roulette.daily.co/" + roomName });
+            console.log("https://" + process.env.REACT_APP_DAILY_SUBDOMAIN + ".daily.co/" + roomName);
+            window.callFrame.join({ url: "https://" + process.env.REACT_APP_DAILY_SUBDOMAIN + ".daily.co/" + roomName })
         }
 
         let timerElt = document.getElementById("date");
