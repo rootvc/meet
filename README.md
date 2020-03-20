@@ -49,9 +49,9 @@ Edit `src/brand.css` to add your custom color scheme.
 
 ### Environment Variables
 
-Learn about environment variables on Netlify: [https://docs.netlify.com/configure-builds/environment-variables/#declare-variables]
+Learn about environment variables on Netlify: https://docs.netlify.com/configure-builds/environment-variables/#declare-variables
 
-`DAILY_API_KEY` = API key for [daily.co] API
+`DAILY_API_KEY` = API key for [daily.co](daily.co) API
 
 ## Deployment
 
