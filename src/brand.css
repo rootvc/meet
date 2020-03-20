@@ -1,0 +1,27 @@
+:root {
+    --brand-bg-color: #2c2c2c;
+    --brand-txt-color: #ffffff;
+    --brand-link-color: #ffffff;
+ }
+@import url('https://fonts.googleapis.com/css?family=Abel|Source+Code+Pro&display=swap');
+
+body {
+  color: var(--brand-txt-color);
+  font-family: "Abel";
+}
+.header {
+  width: 100%;
+}
+a {
+  color: var(--brand-link-color);
+}
+.room {
+  letter-spacing: 0.1em;
+}
+.header, .footer {
+  background-color: var(--brand-bg-color);
+}
+#frame {
+  background-color: var(--brand-bg-color);
+  background-image: url("logo.png");
+}
