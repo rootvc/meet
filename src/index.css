@@ -86,6 +86,10 @@ img.logo-header {
   .title, footer {
     font-size: 90%;
   }
+  .daily {
+    font-size: 50%;
+    margin-right: 3em;
+  }
 }
 html, body {
   overflow-x: hidden;
