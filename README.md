@@ -6,7 +6,7 @@
 1. Create an account on [Daily.co](https://daily.co) and pick a subdomain name.
 1. Deploy the app (recommended: use the Netlify button above, and create an account there.) 
 1. Create rooms in the [Daily.co Dashboard](https://dashboard.daily.co), each beginning with the prefix `meet-`. For example, if you want to make rooms for Avidan, Chrissy, Kane, and Lee, you would create rooms called `meet-avidan`, `meet-chrissy`, `meet-kane`, and `meet-lee`. Make sure the rooms are public.
-1. Go to your [Netlify Dashboard](https://app.netlify.com/sites) > Settings > Environment Variables and add `REACT_APP_DAILY_SUBDOMAIN=[YOUR_DAILY_SUBDOMAIN]`.
+1. Go to your [Netlify Dashboard](https://app.netlify.com/sites) > Settings > Build & Deploy > Environment Variables and add `REACT_APP_DAILY_SUBDOMAIN=[YOUR_DAILY_SUBDOMAIN]`.
 1. Visit `https://[YOUR_NETLIFY_APP_NAME].netlify.com/[YOUR_ROOM_NAME]`
 
 ### Usage
@@ -30,12 +30,12 @@ Our app deploys with continuous deployment hooks, which you can configure for yo
 
 ## Environment Variables
 
-You can use the environment variables in `netlify.toml` as defaults. However, you can override them in the [Netlify UI](https://app.netlify.com/sites). You can also edit the `netlify.toml` file in your own fork or clone.
-
-Learn about environment variables on Netlify: https://docs.netlify.com/configure-builds/environment-variables/#declare-variables
+You can configure the following environment variables in the [Netlify UI](https://app.netlify.com/sites) under Settings > Build & Deploy > Environment Variables.
 
 `REACT_APP_DAILY_SUBDOMAIN` = Subdomain on [daily.co](daily.co) for your account. (e.g. `rootvc`)
-`REACT_APP_ASSET_PATH` = Path to your custom assets. (Default: ".") Foer our own implementation, we use S3 and put the URL to the bucket here.
+`REACT_APP_ASSET_PATH` = Path to your custom assets. For our own implementation, we use S3 and put the URL to the bucket here.
+
+Learn about environment variables on Netlify: https://docs.netlify.com/configure-builds/environment-variables/#declare-variables
 
 ## Command Line Scripts
 
