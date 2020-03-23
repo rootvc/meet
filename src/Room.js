@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import moment from 'moment-timezone';
+import config from "./config.js";
  
 class Room extends Component {
     componentDidMount() {
@@ -19,8 +20,8 @@ class Room extends Component {
             });
             
             console.log("Joining " + roomName);
-            console.log("https://" + process.env.REACT_APP_DAILY_SUBDOMAIN + ".daily.co/" + roomName);
-            window.callFrame.join({ url: "https://" + process.env.REACT_APP_DAILY_SUBDOMAIN + ".daily.co/" + roomName })
+            console.log("https://" + config.DAILY_SUBDOMAIN + ".daily.co/" + roomName);
+            window.callFrame.join({ url: "https://" + config.DAILY_SUBDOMAIN + ".daily.co/" + roomName })
         }
 
         let timerElt = document.getElementById("date");
@@ -32,11 +33,9 @@ class Room extends Component {
         createFrameAndJoinRoom(window.location.pathname.replace("/", ""));
     }
 
-        // background-image: "url({process.env.REACT_APP_ASSET_PATH + 'logo.png'});"
-
     render() {
         let frameStyle = {
-            backgroundImage: "url(" + process.env.REACT_APP_ASSET_PATH + "/logo.png)"
+            backgroundImage: "url(" + config.ASSET_PATH + "/logo.png)"
         }
 
         return (
@@ -44,7 +43,7 @@ class Room extends Component {
                 <div id="frame" style={frameStyle}></div>
                 <div className="header">
                     <h2 className="title">MEETING WITH {this.props.name.toUpperCase()} &#x2F;&#x2F; GUEST</h2>
-                    <a href="https://root.vc" target="_blank"><img alt="Root Ventures" className="logo-header" src={process.env.REACT_APP_ASSET_PATH + "/logo-header.png"}></img></a>
+                    <a href={config.COMPANY_URL} target="_blank"><img alt={config.COMPANY_NAME} className="logo-header" src={config.ASSET_PATH + "/logo-header.png"}></img></a>
                 </div>
                 <div className="footer">
                     <div className="date" id="date"></div>

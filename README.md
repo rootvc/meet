@@ -34,6 +34,8 @@ You can configure the following environment variables in the [Netlify UI](https:
 
 `REACT_APP_DAILY_SUBDOMAIN` = Subdomain on [daily.co](daily.co) for your account. (e.g. `rootvc`)
 `REACT_APP_ASSET_PATH` = Path to your custom assets. For our own implementation, we use S3 and put the URL to the bucket here.
+`REACT_APP_COMPANY_NAME` = Name of your company, which will appear in the title, alt tags for your logos, and various other places.
+`REACT_APP_COMPANY_URL` = URL for your company, which is the target of the anchor tag around your logo.
 
 Learn about environment variables on Netlify: https://docs.netlify.com/configure-builds/environment-variables/#declare-variables
 
