@@ -23,5 +23,4 @@ a {
 }
 #frame {
   background-color: var(--brand-bg-color);
-  background-image: url("logo.png");
 }
