@@ -39,12 +39,12 @@ class Room extends Component {
             <div id="frame"></div>
             <div className="header">
                 <h2 className="title">MEETING WITH {this.props.name.toUpperCase()} &#x2F;&#x2F; GUEST</h2>
-                <a href="https://root.vc" target="_blank"><img alt="Root Ventures" className="logo-header" src="logo-header.png"></img></a>
+                <a href="https://root.vc" target="_blank"><img alt="Root Ventures" className="logo-header" src={process.env.REACT_APP_ASSET_PATH + "/logo-header.png"}></img></a>
             </div>
             <div className="footer">
                 <div className="date" id="date"></div>
                 <div className="plug">
-                    <span className="daily">Made with <a href="https://daily.co">daily.co</a></span>
+                    <span className="daily">Made with <a href="https://daily.co" target="_blank">daily.co</a></span>
                     <a href="https://github.com/rootvc/meet" target="_blank"><img alt="GitHub" className="github" src="github.png"></img></a>
                 </div>
             </div>
