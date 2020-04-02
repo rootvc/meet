@@ -67,7 +67,7 @@ function Child() {
       ],
       "start_url": ".",
       "display": "standalone",
-      "theme_color": "ffffff",
+      "theme_color": "#ffffff",
       "background_color": "#000000",
     };
 
