@@ -16,7 +16,7 @@ Each of your meeting rooms are located at their own path name (minus the `meet-`
 
 ## Deployment Options
 
-Deployment requires a [Netlify](netlify.com) account.
+Deployment requires a [Netlify](https://www.netlify.com) account.
 
 ### Deploy with Netlify Button
 
