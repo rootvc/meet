@@ -9,6 +9,8 @@ class Room extends Component {
             window.callFrame = window.DailyIframe.createFrame(
                 document.getElementById("frame"), {
                 showLeaveButton: true,
+                showFullscreenButton: true,
+                enableChat: true,
                 iframeStyle: {
                     position: 'relative',
                     top: "4%",
