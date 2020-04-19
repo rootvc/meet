@@ -10,7 +10,6 @@ class Room extends Component {
                 document.getElementById("frame"), {
                 showLeaveButton: true,
                 showFullscreenButton: true,
-                enableChat: true,
                 iframeStyle: {
                     position: 'relative',
                     top: "4%",
