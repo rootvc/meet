@@ -47,6 +47,8 @@ In the project directory, you can run:
 
 To install dependencies.
 
+Meet uses [scarf-js](https://github.com/scarf-sh/scarf.js) to collect anonymized installation analytics. These analytics help support the maintainers of this package. However, if you'd like to opt out, you can do so by setting `scarfSettings.enabled = false` in your project's package.json, or by setting the environment variable `SCARF_ANALYTICS=false` before you install. See the scarf-js readme for more information.
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
