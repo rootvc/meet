@@ -35,15 +35,21 @@ class Room extends Component {
     }
 
     render() {
+        const roomName = this.props.name.toUpperCase();
+        const defaultTitle = "MEETING WITH "+ roomName + " // GUEST";
+        const defaultBackgroundImage = config.rooms[roomName].BACKGROUND || "logo.png";
+
         let frameStyle = {
-            backgroundImage: "url(" + config.ASSET_PATH + "/logo.png)"
+            backgroundImage: "url(" + config.ASSET_PATH + "/" + defaultBackgroundImage + ")"
         }
+
+        console.log(frameStyle);
 
         return (
             <div className="room">
                 <div id="frame" style={frameStyle}></div>
                 <div className="header">
-                    <h2 className="title">MEETING WITH {this.props.name.toUpperCase()} &#x2F;&#x2F; GUEST</h2>
+                    <h2 className="title">{config.rooms[roomName].TITLE || defaultTitle}</h2>
                     <a href={config.COMPANY_URL} target="_blank"><img alt={config.COMPANY_NAME} className="logo-header" src={config.ASSET_PATH + "/logo-header.png"}></img></a>
                 </div>
                 <div className="footer">
