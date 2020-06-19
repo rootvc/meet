@@ -50,13 +50,13 @@ class Room extends Component {
                 <div id="frame" style={frameStyle}></div>
                 <div className="header">
                     <h2 className="title">{config.rooms[roomName].TITLE || defaultTitle}</h2>
-                    <a href={config.COMPANY_URL} target="_blank"><img alt={config.COMPANY_NAME} className="logo-header" src={config.ASSET_PATH + "/logo-header.png"}></img></a>
+                    <a href={config.COMPANY_URL} target="_blank" rel="noopener noreferrer"><img alt={config.COMPANY_NAME} className="logo-header" src={config.ASSET_PATH + "/logo-header.png"}></img></a>
                 </div>
                 <div className="footer">
                     <div className="date" id="date"></div>
                     <div className="plug">
-                        <span className="daily">Made with <a href="https://daily.co" target="_blank">daily.co</a></span>
-                        <a href="https://github.com/rootvc/meet" target="_blank"><img alt="GitHub" className="github" src="github.png"></img></a>
+                        <span className="daily">Made with <a href="https://daily.co" target="_blank" rel="noopener noreferrer">daily.co</a></span>
+                        <a href="https://github.com/rootvc/meet" target="_blank" rel="noopener noreferrer"><img alt="GitHub" className="github" src="github.png"></img></a>
                     </div>
                 </div>
             </div>
