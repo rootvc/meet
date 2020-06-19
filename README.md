@@ -37,6 +37,11 @@ You can configure the following environment variables in the [Netlify UI](https:
 `REACT_APP_COMPANY_NAME` = Name of your company, which will appear in the title, alt tags for your logos, and various other places.
 `REACT_APP_COMPANY_URL` = URL for your company, which is the target of the anchor tag around your logo.
 
+### Room-Specific Environment Variables
+To change the appearance of a room called "wine":
+`REACT_APP_ROOM_WINE_TITLE` = text to display in the upper left corner of the screen
+`REACT_APP_ROOM_WINE_BACKGROUND` = a filename for a custom loading spinner background that shows before the iframe loads
+
 Learn about environment variables on Netlify: https://docs.netlify.com/configure-builds/environment-variables/#declare-variables
 
 ## Command Line Scripts
