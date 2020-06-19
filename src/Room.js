@@ -64,7 +64,8 @@ class Room extends Component {
                 <div className="footer">
                     <div className="date" id="date"></div>
                     <div className="plug">
-                        <span className="daily">Made with <a href="https://daily.co" target="_blank" rel="noopener noreferrer">daily.co</a></span>
+                        <span className="made"><a href="https://lee.af/meet-app" target="_blank" rel="noopener noreferrer">Made</a></span>
+                        <span className="daily">with <a href="https://daily.co" target="_blank" rel="noopener noreferrer">daily.co</a></span>
                         <a href="https://github.com/rootvc/meet" target="_blank" rel="noopener noreferrer"><img alt="GitHub" className="github" src="github.png"></img></a>
                     </div>
                 </div>

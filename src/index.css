@@ -49,6 +49,13 @@ body {
   transform: translateY(-50%);
   width: 100%;
 }
+.made {
+  position: absolute;
+  margin-right: 1em;
+  right: 8.5em;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .daily {
   position: absolute;
   margin-right: 1em;
