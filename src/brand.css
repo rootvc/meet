@@ -11,6 +11,7 @@ body {
 }
 .header {
   width: 100%;
+  color: var(--brand-txt-color);
 }
 a {
   color: var(--brand-link-color);
@@ -18,7 +19,7 @@ a {
 .room {
   letter-spacing: 0.1em;
 }
-.header, .footer {
+.footer {
   background-color: var(--brand-bg-color);
 }
 #frame {

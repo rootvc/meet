@@ -36,20 +36,29 @@ class Room extends Component {
 
     render() {
         const roomName = this.props.name.toUpperCase();
+        const roomConfig = config.rooms[roomName];
+
         const defaultTitle = "MEETING WITH "+ roomName + " // GUEST";
-        const defaultBackgroundImage = config.rooms[roomName].BACKGROUND || "logo.png";
+        const defaultBackground = "logo.png";
+
+        const title = roomConfig && roomConfig.TITLE ? roomConfig.TITLE : defaultTitle;
+        const background = roomConfig && roomConfig.BACKGROUND ? roomConfig.BACKGROUND : defaultBackground;
 
         let frameStyle = {
-            backgroundImage: "url(" + config.ASSET_PATH + "/" + defaultBackgroundImage + ")"
+            backgroundImage: "url(" + config.ASSET_PATH + "/" + background + ")"
         }
 
-        console.log(frameStyle);
+        const headerStyle = roomConfig && roomConfig.HEADER ? {
+            backgroundImage: "url(" + config.ASSET_PATH + "/" + roomConfig.HEADER + ")"
+        } : {}
+
+        console.log(roomConfig);
 
         return (
             <div className="room">
                 <div id="frame" style={frameStyle}></div>
-                <div className="header">
-                    <h2 className="title">{config.rooms[roomName].TITLE || defaultTitle}</h2>
+                <div className="header" style={headerStyle}>
+                    <h2 className="title">{title}</h2>
                     <a href={config.COMPANY_URL} target="_blank" rel="noopener noreferrer"><img alt={config.COMPANY_NAME} className="logo-header" src={config.ASSET_PATH + "/logo-header.png"}></img></a>
                 </div>
                 <div className="footer">

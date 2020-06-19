@@ -41,6 +41,7 @@ You can configure the following environment variables in the [Netlify UI](https:
 To change the appearance of a room called "wine":
 `REACT_APP_ROOM_WINE_TITLE` = text to display in the upper left corner of the screen
 `REACT_APP_ROOM_WINE_BACKGROUND` = a filename for a custom loading spinner background that shows before the iframe loads
+`REACT_APP_ROOM_WINE_HEADER` = a filename for a custom header image in the S3 bucket
 
 Learn about environment variables on Netlify: https://docs.netlify.com/configure-builds/environment-variables/#declare-variables
 
