@@ -19,7 +19,7 @@ export default defineConfig({
         // inside the specs, so no network access or credentials are required.
         {
             name: 'chromium',
-            testIgnore: [/e2e\.spec\.js/, /screenshots\.spec\.js/],
+            testIgnore: [/e2e\.spec\.js/, /screenshots\.spec\.js/, /prod-verify\.spec\.js/],
             use: { ...devices['Desktop Chrome'] },
         },
         // True end-to-end project: actually joins a real Daily room. Requires
@@ -28,6 +28,7 @@ export default defineConfig({
         {
             name: 'e2e',
             testMatch: [/e2e\.spec\.js/, /screenshots\.spec\.js/],
+            testIgnore: /prod-verify\.spec\.js/,
             use: {
                 ...devices['Desktop Chrome'],
                 permissions: ['camera', 'microphone'],

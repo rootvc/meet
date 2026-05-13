@@ -15,6 +15,7 @@
     "test:e2e": "playwright test --project=e2e --grep-invert screenshots",
     "test:shots": "playwright test --project=e2e --grep screenshots",
     "test:all": "playwright test",
+    "test:prod": "playwright test --config=playwright.prod.config.js",
     "test:ui": "playwright test --ui",
     "cleanup-rooms": "node scripts/cleanup-rooms.mjs"
   },

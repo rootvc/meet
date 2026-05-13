@@ -22,3 +22,4 @@ playwright-report
 test-results
 screenshots
 .playwright-mcp
+.vercel
