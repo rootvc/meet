@@ -1,27 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap');
+
 :root {
-    --brand-bg-color: #2c2c2c;
-    --brand-txt-color: #ffffff;
-    --brand-link-color: #ffffff;
- }
-@import url('https://fonts.googleapis.com/css?family=Abel|Source+Code+Pro&display=swap');
+    --bg-primary: #0c0c0c;
+    --bg-secondary: #1c1c1c;
+    --bg-tertiary: #2c2c2c;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #555555;
+
+    /* CLI colors */
+    --cli-green: #1bebb9;
+    --cli-magenta: #d670d6;
+    --cli-yellow: #e5e510;
+    --cli-blue: #6a9fb5;
+    --cli-red: #ff6b6b;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-  color: var(--brand-txt-color);
-  font-family: "Abel";
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Source Code Pro', monospace;
+    margin: 0;
+    padding: 0;
 }
-.header {
-  width: 100%;
-  color: var(--brand-txt-color);
-}
+
 a {
-  color: var(--brand-link-color);
+    color: var(--cli-blue);
+    text-decoration: none;
 }
-.room {
-  letter-spacing: 0.1em;
+
+a:hover {
+    color: var(--cli-green);
 }
-.footer {
-  background-color: var(--brand-bg-color);
+
+/* Terminal prompt styles */
+.terminal-prompt {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-#frame {
-  background-color: var(--brand-bg-color);
+
+.terminal-prompt.cli-line {
+    font-size: 1.1rem;
+    display: inline-flex;
+}
+
+.prompt-user {
+    color: var(--cli-yellow);
+}
+
+.prompt-sep {
+    color: var(--text-muted);
+}
+
+.prompt-host {
+    color: var(--cli-green);
+}
+
+.prompt-path {
+    color: var(--cli-blue);
+}
+
+.prompt-symbol {
+    color: var(--text-muted);
+    margin-left: 0.25em;
+    margin-right: 0.5em;
+}
+
+.prompt-command {
+    color: var(--cli-magenta);
+}
+
+/* Cursor - only blinks when .blink class is present */
+.cursor {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.1em;
+    background-color: var(--text-secondary);
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    opacity: 1;
+}
+
+.cursor.blink {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* CLI intro screen */
+.cli-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+    cursor: text;
+}
+
+.cli-output {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.cli-line {
+    margin: 0.25rem 0;
+}
+
+.cli-info {
+    color: var(--text-secondary);
+}
+
+.cli-label {
+    color: var(--cli-green);
+}
+
+.cli-input-text {
+    color: var(--text-primary);
+}
+
+.cli-form {
+    display: inline;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cli-input {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.1rem;
+    background: transparent;
+    border: none;
+    color: var(--cli-green);
+    outline: none;
+    width: 200px;
+    caret-color: var(--cli-green);
+}
+
+/* Hidden input trick - show typed text in the pre */
+.cli-form {
+    position: fixed;
+    top: -100px;
 }

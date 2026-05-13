@@ -1,17 +1,18 @@
-const env = process.env;
-var rooms = {};
+const env = import.meta.env;
+const rooms = {};
 
-const roomsVars = Object.keys(env).filter(key => key.startsWith("REACT_APP_ROOM_"));
+// Vite uses VITE_ prefix for env vars
+const roomsVars = Object.keys(env).filter(key => key.startsWith("VITE_ROOM_"));
 roomsVars.forEach(function(key) {
-    const [rn, k] = key.split("REACT_APP_ROOM_").pop().split("_");
-    rooms[rn] = rooms[rn] || { name: rn }; // initialize in case empty
+    const [rn, k] = key.split("VITE_ROOM_").pop().split("_");
+    rooms[rn] = rooms[rn] || { name: rn };
     rooms[rn][k] = env[key];
-})
+});
 
 export default {
-    ASSET_PATH: env.REACT_APP_ASSET_PATH || ".",
-    DAILY_SUBDOMAIN: env.REACT_APP_DAILY_SUBDOMAIN,
-    COMPANY_NAME: env.REACT_APP_COMPANY_NAME || "Daily.co",
-    COMPANY_URL: env.REACT_APP_COMPANY_URL || "https://daily.co",
+    ASSET_PATH: env.VITE_ASSET_PATH || ".",
+    DAILY_SUBDOMAIN: env.VITE_DAILY_SUBDOMAIN,
+    COMPANY_NAME: env.VITE_COMPANY_NAME || "Daily.co",
+    COMPANY_URL: env.VITE_COMPANY_URL || "https://daily.co",
     rooms: rooms,
 }

@@ -1,104 +1,157 @@
-body {
-  padding: 20px;
-  margin: 0;
-  height: 1vh;
-}
-.content {
-  padding: 20px;
-}
-.content h2 {
-  padding: 0;
-  margin: 0;
-}
-.content li {
-  margin-bottom: 10px;
-}
-.room {
-  letter-spacing: 0.1em;
-}
-.header {
-  height: 4%;
-  min-height: 40px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-.title {
-  position: absolute;
-  left: 0.5em;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.footer {
-  position: absolute;
-  width: 100%;
-  height: 4%;
-  bottom: 0;
-  left: 0;
-}
-.date {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 1em;
-}
-.plug {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-}
-.made {
-  position: absolute;
-  margin-right: 1em;
-  right: 8.5em;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.daily {
-  position: absolute;
-  margin-right: 1em;
-  right: 2.25em;
-  top: 50%;
-  transform: translateY(-50%);
-}
-img.github {
-  position: absolute;
-  height: 1.25em;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 1em;
-}
-img.logo-header {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 1em
-}
-#frame {
-  background-size: 30%;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-@media only screen and (max-width: 600px) {
-  .title, footer {
-    font-size: 90%;
-  }
-  .daily {
-    font-size: 50%;
-    margin-right: 3em;
-  }
-}
 html, body {
-  overflow-x: hidden;
-  overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #0c0c0c;
+}
+
+#root {
+    height: 100%;
+}
+
+/* Flexbox layout */
+.room {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--bg-primary);
+}
+
+.header {
+    flex: 0 0 auto;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 1rem;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--bg-tertiary);
+}
+
+/* Intro view header: only the brand mark, right-aligned. */
+.header.header-intro {
+    justify-content: flex-end;
+    background-color: transparent;
+    border-bottom: none;
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+}
+
+.brand-mark:hover {
+    opacity: 1;
+}
+
+.brand-mark img {
+    height: 22px;
+    width: auto;
+    display: block;
+}
+
+#frame {
+    flex: 1 1 auto;
+    min-height: 0;
+    position: relative;
+    background-color: var(--bg-primary);
+}
+
+/* If Daily reports an error, hide the (potentially flickering) iframe so the
+   user only sees our clean error overlay instead. */
+#frame[data-error]:not([data-error=""]) iframe {
+    display: none;
+}
+
+.call-error {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+    color: var(--text-primary);
+    z-index: 1;
+}
+
+.call-error-title {
+    font-size: 1.1rem;
+    color: var(--cli-red);
+}
+
+.call-error-hint {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.call-error-hint a {
+    color: var(--cli-blue);
+}
+
+.call-error-hint a:hover {
+    color: var(--cli-green);
+}
+
+.footer {
+    flex: 0 0 auto;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--bg-tertiary);
+    font-size: 0.8rem;
+}
+
+.date {
+    color: var(--text-secondary);
+}
+
+.made-with {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.made-with:hover {
+    color: var(--cli-green);
+}
+
+/* Responsive */
+@media only screen and (max-width: 600px) {
+    .header {
+        height: 40px;
+        padding: 0 0.75rem;
+    }
+
+    .brand-mark img {
+        height: 18px;
+    }
+
+    .terminal-prompt {
+        font-size: 0.8rem;
+    }
+
+    .footer {
+        height: 32px;
+        font-size: 0.75rem;
+        padding: 0 0.75rem;
+    }
+
+    .cli-container {
+        padding: 1.5rem;
+    }
+
+    .cli-output {
+        font-size: 0.95rem;
+    }
 }
