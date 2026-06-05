@@ -44,8 +44,9 @@ const IFRAME_OPTIONS = {
 }
 
 // How long we wait for `joined-meeting` before declaring the call dead.
-// Daily's WebRTC negotiation typically completes in ~3s; 15s is conservative.
-const JOIN_TIMEOUT_MS = 15_000
+// Daily's WebRTC negotiation typically completes in ~3s, but the tail can
+// stretch past 15s on flaky networks / TURN fallback / cold rooms.
+const JOIN_TIMEOUT_MS = 30_000
 
 // Inner component that owns the prebuilt call frame. It is mounted only once
 // the user has confirmed they want to join, so the iframe is created exactly
