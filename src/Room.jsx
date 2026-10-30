@@ -291,6 +291,34 @@ export default function Room({ name }) {
         }
     }, [phase])
 
+    // iPhone browsers (Safari and Chrome are both WebKit) can't fullscreen a
+    // page, so "full screen" is a CSS mode that hides our chrome and fills the
+    // viewport; where the Fullscreen API exists (Android, desktop, iPad) we
+    // also request real fullscreen.
+    const [immersive, setImmersive] = useState(false)
+    const toggleImmersive = useCallback(() => {
+        const next = !immersive
+        setImmersive(next)
+        try {
+            const el = document.documentElement
+            if (next && el.requestFullscreen) el.requestFullscreen().catch(() => {})
+            else if (!next && document.fullscreenElement) document.exitFullscreen().catch(() => {})
+        } catch {
+            /* fullscreen unsupported; the CSS mode still applies */
+        }
+    }, [immersive])
+
+    // Leaving real fullscreen via the OS (Esc / swipe) should drop the CSS mode too.
+    useEffect(() => {
+        const onChange = () => {
+            if (!document.fullscreenElement) setImmersive(false)
+        }
+        document.addEventListener('fullscreenchange', onChange)
+        return () => document.removeEventListener('fullscreenchange', onChange)
+    }, [])
+
+    const needsInstallHint = useMemo(() => isIOSBrowserTab(), [])
+
     const cursorClass = showCursor ? 'cursor blink' : 'cursor'
 
     // Render colored prompt
@@ -353,9 +381,17 @@ export default function Room({ name }) {
                             value={userName}
                             onChange={(e) => setUserName(e.target.value)}
                             className="cli-input"
-                            autoComplete="off"
+                            id="display-name"
+                            name="name"
+                            inputMode="text"
+                            enterKeyHint="go"
+                            aria-label="Your name"
+                            autoComplete="name"
+                            data-lpignore="true"
+                            data-1p-ignore
                             spellCheck="false"
-                            autoCapitalize="off"
+                            autoCapitalize="words"
+                            autoCorrect="off"
                             maxLength={30}
                         />
                     </form>
@@ -372,16 +408,43 @@ export default function Room({ name }) {
 
     // Show video call
     return (
-        <div className="room">
+        <div className={immersive ? 'room immersive' : 'room'}>
             <CallView roomUrl={roomUrl} userName={userName.trim()} roomName={roomName} />
+            <button
+                type="button"
+                className="immersive-toggle"
+                onClick={toggleImmersive}
+                aria-label={immersive ? 'Exit full screen' : 'Enter full screen'}
+                aria-pressed={immersive}
+            >
+                {immersive ? '✕' : '⤢'}
+            </button>
             <footer className="footer">
                 <div className="date" id="date">{currentDatetime()}</div>
+                {needsInstallHint && (
+                    <span className="install-hint">
+                        Share → Add to Home Screen for true full screen
+                    </span>
+                )}
                 <span className="made-with">
                     Made with Root Ventures portfolio company <a href="https://docs.daily.co/reference" target="_blank" rel="noopener noreferrer">Daily.co</a> API and vibes
                 </span>
             </footer>
         </div>
     )
+}
+
+// True on iPhone/iPad when running in a normal browser tab (not an installed
+// home-screen app), where Add to Home Screen is the only way to hide the URL bar.
+function isIOSBrowserTab() {
+    if (typeof navigator === 'undefined') return false
+    const ios =
+        /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+    const standalone =
+        navigator.standalone === true ||
+        window.matchMedia?.('(display-mode: standalone)').matches
+    return ios && !standalone
 }
 
 function currentDatetime() {
